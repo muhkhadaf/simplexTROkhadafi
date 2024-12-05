@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Kalkulator Simplex</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Tambahkan ini -->
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Simplex</h1>
+        <form id="simplexForm">
+            <table>
+                <tr>
+                    <td><label for="objective">Masukkan Fungsi Tujuan:</label></td>
+                    <td><input type="text" id="objective" placeholder="Contoh: max 3x1 + 2x2" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><small>Format: max/min a1x1 + a2x2 + ...</small></td>
+                </tr>
+                <tr>
+                    <td><label for="constraints">Masukkan Kendala:</label></td>
+                    <td><input type="text" id="constraints" placeholder="Contoh: 3x1 + 2x2 <= 30; x1 >= 0; x2 >= 0" required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><small>Format: a1x1 + a2x2 <= b; x1 >= 0; x2 >= 0; ...</small></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Hitung</button></td>
+                </tr>
+            </table>
+        </form>
+        <table id="resultTable">
+            <thead>
+                <tr>
+                    <th>Iterasi</th>
+                    <th>Variabel</th>
+                    <th>Nilai</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Hasil iterasi akan ditampilkan di sini -->
+            </tbody>
+        </table>
+        <div id="finalResult"></div>
+        <canvas id="resultChart" width="400" height="200"></canvas> <!-- Tambahkan ini untuk grafik -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
